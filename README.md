@@ -7,7 +7,7 @@
 ## Product Section
 ![Product Section](images/productssection.png)
 
-## Product PAge
+## Product Page
 ![Product Page](images/productspage.png)
 
 ## SignIn Section
