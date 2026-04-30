@@ -2,16 +2,16 @@
 ![Homepage Screenshot](images/homepage.png)
 
 ## Category Page
-![Product Page](images/categorypage.png)
+![Category Page](images/categorypage.png)
 
 ## Product Section
-![Product Page](images/productsection.png)
+![Product Section](images/productssection.png)
 
 ## Product PAge
-![Product Page](images/productpage.png)
+![Product Page](images/productspage.png)
 
 ## SignIn Section
-![Product Page](images/Signin.png)
+![SignIn Page](images/signin.png)
 
 ## Footer Section
-![Product Page](images/footer.png)
+![Footer Page](images/footer.png)
