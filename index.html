@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D | Premium E-Commerce Experience</title>
+    <meta name="description"
+        content="Shop the latest in fashion and electronics with Nexus. Modern, sleek, and premium shopping experience.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="buy-flow.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav">
+            <!-- Left Section -->
+            <div class="nav-left">
+                <a href="#" class="logo">
+                    <i data-lucide="shopping-bag"></i>
+                    NEXUS<span>.</span>
+                </a>
+                <div class="location-selector desktop-only" id="locationSelector">
+                    <i data-lucide="map-pin" class="loc-icon"></i>
+                    <span id="currentCity">Chennai</span>
+                    <div class="location-dropdown" id="locationDropdown">
+                        <ul>
+                            <li onclick="changeLocation('Chennai')">Chennai</li>
+                            <li onclick="changeLocation('Mumbai')">Mumbai</li>
+                            <li onclick="changeLocation('Delhi')">Delhi</li>
+                            <li onclick="changeLocation('Bangalore')">Bangalore</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Section -->
+            <div class="nav-center">
+                <div class="search-bar">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="productSearch" placeholder="Search products..." autocomplete="off">
+                    <i data-lucide="mic" class="mic-icon"></i>
+                    <div id="searchSuggestions" class="search-suggestions" style="display: none;"></div>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="mobile-search-btn mobile-only" id="mobileSearchBtn">
+                        <i data-lucide="search"></i>
+                    </button>
+                    <!-- Mobile Location -->
+                    <div class="location-selector mobile-only" id="mobileLocationSelector"
+                        onclick="this.classList.toggle('active')">
+                        <i data-lucide="map-pin" class="loc-icon"></i>
+                        <span id="currentCityMobile" style="display:none;">Chennai</span>
+                    </div>
+                    <!-- Location is now on the left for desktop -->
+                    <button class="cart-btn" id="openCart">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="user-profile-btn desktop-only" id="userProfileBtn">
+                        <i data-lucide="user"></i>
+                    </button>
+                    <button class="mobile-menu-btn mobile-only" id="menuToggle">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu-drawer" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="logo">
+                <i data-lucide="shopping-bag"></i> NEXUS<span>.</span>
+            </a>
+            <button class="close-menu-btn" id="closeMobileMenu">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="#shop" onclick="closeMobileMenu()">Shop</a></li>
+            <li><a href="#categories" onclick="closeMobileMenu()">Categories</a></li>
+            <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="#account" onclick="closeMobileMenu()"><i data-lucide="user"
+                        style="width: 18px; margin-right: 8px;"></i> Account</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="carousel-container">
+                <div class="carousel-track" id="heroCarousel">
+                    <div class="hero-content slide" style="background-image: url('assets/s26bg.png');"></div>
+                    <div class="hero-content slide" style="background-image: url('assets/Odyssey-G9_2.jpg');"></div>
+                    <div class="hero-content slide" style="background-image: url('assets/qledtv.png');"></div>
+                </div>
+
+                <div class="hero-overlay"></div>
+                <div class="hero-static-content">
+                    <div class="hero-text">
+                        <h1 id="heroTitle">Vision AI TVs</h1>
+                        <p id="heroDesc">Experience the future of entertainment with the Neo QLED 8K. Featuring
+                            breathtaking 8K
+                            clarity and Quantum Dot technology.</p>
+                        <div style="margin-top: 20px;">
+                            <a href="#shop" class="btn btn-hero">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Scrollbar -->
+                <div class="carousel-scrollbar" id="heroScrollbar">
+                    <div class="scrollbar-thumb" id="heroScrollThumb"></div>
+                </div>
+
+                <!-- Carousel Navigation Arrows -->
+                <button class="hero-nav prev" id="prevHeroBtn" aria-label="Previous slide">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <button class="hero-nav next" id="nextHeroBtn" aria-label="Next slide">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Deals Category Section -->
+    <section class="container corporate-deals-section" id="categories" style="padding-top: 80px; padding-bottom: 40px;">
+        <div class="corporate-header" style="text-align: center; margin-bottom: 40px;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 24px;">Shop by Category</h2>
+            <div class="category-nav" id="categoryNav">
+                <button class="cat-btn active" data-category="Offers for you">Offers for you</button>
+                <button class="cat-btn" data-category="Mobile">Mobile</button>
+                <button class="cat-btn" data-category="TV">TV</button>
+                <button class="cat-btn" data-category="Home Appliances">Home Appliances</button>
+                <button class="cat-btn" data-category="Galaxy Ecosystem">Galaxy Ecosystem</button>
+                <button class="cat-btn" data-category="Laptops & Monitors">Laptops & Monitors</button>
+            </div>
+        </div>
+        <div class="category-layout" id="corporateProductsGrid">
+            <!-- Dynamic products injected here -->
+        </div>
+    </section>
+
+    <!--Featured Products -->
+    <section class="container" id="shop" style="padding: 60px 20px;">
+        <div class="section-header" style="justify-content: center; margin-bottom: 40px;">
+            <h2 style="font-size: 2.5rem; text-align: center; font-weight: 700;">Featured Products</h2>
+        </div>
+        <div class="deals-container" id="dealsContainer">
+            <!-- Card 1 -->
+            <div class="deal-card">
+                <div class="deal-img" onclick="window.location.href='product.html'" style="cursor:pointer;">
+                    <img src="assets/s25.png" alt="Galaxy S25 Ultra">
+                </div>
+                <h3>Galaxy S25 Ultra</h3>
+                <p>Save 7%* extra</p>
+                <div class="spacer"></div>
+                <a href="product.html" class="buy-now">Buy now <i data-lucide="chevron-right"
+                        style="width: 16px; height: 16px;"></i></a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="deal-card">
+                <div class="deal-img" onclick="window.location.href='product.html'" style="cursor:pointer;">
+                    <img src="assets/wmachine.webp" alt="9.0 kg Front Load">
+                </div>
+                <h3>9.0 kg Front Load<br>with AI Ecobubble</h3>
+                <p>Buy at ₹ 27112*</p>
+                <p>Buy more, save 5%* extra</p>
+                <div class="spacer"></div>
+                <a href="product.html" class="buy-now">Buy now <i data-lucide="chevron-right"
+                        style="width: 16px; height: 16px;"></i></a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="deal-card">
+                <div class="deal-img" onclick="window.location.href='product.html'" style="cursor:pointer;">
+                    <img src="assets/s10.jpg" alt="Galaxy Tab S10 FE">
+                </div>
+                <h3>Galaxy Tab S10 FE<br>with S Pen</h3>
+                <p>Save 10%* extra*</p>
+                <div class="spacer"></div>
+                <a href="product.html" class="buy-now">Buy now <i data-lucide="chevron-right"
+                        style="width: 16px; height: 16px;"></i></a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="deal-card">
+                <div class="deal-img" onclick="window.location.href='product.html'" style="cursor:pointer;">
+                    <img src="assets/qled.png" alt="Neo QLED">
+                </div>
+                <h3>1.38m(55) Neo QLED<br>Vision AI</h3>
+                <p>Buy at ₹ 61065*</p>
+                <p>Multi-buy soundbar offer*</p>
+                <div class="spacer"></div>
+                <a href="product.html" class="buy-now">Buy now <i data-lucide="chevron-right"
+                        style="width: 16px; height: 16px;"></i></a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="deal-card">
+                <div class="deal-img" onclick="window.location.href='product.html'"
+                    style="padding: 10px; cursor:pointer;">
+                    <img src="assets/s26.png" alt="Galaxy A36 5G">
+                </div>
+                <h3>Galaxy A36 5G</h3>
+                <p>Save up to 9%* extra</p>
+                <div class="spacer"></div>
+                <a href="product.html" class="buy-now">Buy now <i data-lucide="chevron-right"
+                        style="width: 16px; height: 16px;"></i></a>
+            </div>
+        </div>
+
+        <!-- Custom Deals Scrollbar -->
+        <div class="deals-scrollbar"
+            style="width: 60px; height: 4px; background: var(--border); margin: 30px auto 0; border-radius: 4px; position: relative; overflow: hidden; cursor: pointer;">
+            <div id="dealsScrollThumb"
+                style="width: 30%; height: 100%; background: var(--accent); position: absolute; left: 0; top: 0; border-radius: 4px; transition: transform 0.1s ease-out;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits / Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-card glass-card scroll-animate"
+                    onclick="showFeatureDetails('Special Discount', 'Get up to 10% additional corporate discount on selected premium products. Provide your corporate email during checkout to avail this offer.')">
+                    <div class="feature-tooltip">Apply code at checkout</div>
+                    <div class="feature-icon-badge" style="background: rgba(99, 102, 241, 0.1); color: #6366f1;">
+                        <i data-lucide="tag"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Special Discount</h3>
+                        <p>Get up to 10% additional corporate discount.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="feature-card glass-card scroll-animate" style="transition-delay: 0.1s;"
+                    onclick="showFeatureDetails('Free Delivery', 'Enjoy fast and free delivery on all orders over $50. Track your order in real-time through our app.')">
+                    <div class="feature-tooltip">On orders over $50</div>
+                    <div class="feature-icon-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                        <i data-lucide="truck"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Free Delivery</h3>
+                        <p>Enjoy fast and free delivery.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="feature-card glass-card scroll-animate" style="transition-delay: 0.2s;"
+                    onclick="showFeatureDetails('Trade-in', 'Save more when you trade in your old device. We accept devices in any condition and offer competitive market rates.')">
+                    <div class="feature-tooltip">Up to $500 value</div>
+                    <div class="feature-icon-badge" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                        <i data-lucide="refresh-cw"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Trade-in</h3>
+                        <p>Save more when you trade in your old device.</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="feature-card glass-card scroll-animate" style="transition-delay: 0.3s;"
+                    onclick="showFeatureDetails('Flexible Finance', 'Pay easily with up to 18 months EMI options. Choose from various financing partners for a seamless purchase.')">
+                    <div class="feature-tooltip">0% APR available</div>
+                    <div class="feature-icon-badge" style="background: rgba(236, 72, 153, 0.1); color: #ec4899;">
+                        <i data-lucide="credit-card"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Flexible Finance</h3>
+                        <p>Pay easily with up to 18 months EMI options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="container" style="margin-bottom: 80px;">
+        <div class="hero-content"
+            style="background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4)), url(assets/s26ultra.png) center/cover no-repeat; min-height: 300px; padding: 60px;">
+            <div class="hero-text">
+                <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Galaxy S26 Ultra is here!</h2>
+                <p style="color: white; opacity: 0.9;">Discover the power of the new Samsung Galaxy S26 Ultra. Pre-order
+                    now and get exclusive discounts!</p>
+                <a href="#" class="btn" style="background: white; color: var(--primary);">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color: white; margin-bottom: 20px;">
+                        <i data-lucide="shopping-bag"></i>
+                        NEXUS<span>.</span>
+                    </a>
+                    <p>Redefining the way you shop for premium goods. Excellence in every detail.</p>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" id="contact">
+                    <h4>Contact Us</h4>
+                    <p><i data-lucide="map-pin" style="display:inline; width:16px;"></i> 123 Design St, Creative City
+                    </p>
+                    <p><i data-lucide="mail" style="display:inline; width:16px;"></i> support@nexus.com</p>
+                    <p><i data-lucide="phone" style="display:inline; width:16px;"></i> +1 (234) 567-890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nexus E-Commerce. Built with &hearts; by Sri.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart (<span id="cartCountHeader">0</span>)</h3>
+            <button class="close-cart" id="closeCart">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items injected here -->
+            <div class="empty-cart" style="text-align: center; margin-top: 40px; color: var(--text-muted);">
+                <i data-lucide="shopping-cart" style="width: 48px; height: 48px; margin-bottom: 10px;"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalAmount">$0.00</span>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="overlay" id="modalOverlay"></div>
+    <div class="modal" id="quickViewModal">
+        <button class="close-modal" id="closeModal">
+            <i data-lucide="x"></i>
+        </button>
+        <div class="modal-content" id="modalBody">
+            <!-- Content injected via JS -->
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="buy-flow.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

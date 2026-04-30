@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="buy-flow.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="index.html" class="back-link"><i data-lucide="arrow-left"></i> Back to Shop</a>
+    </header>
+
+    <main class="product-container">
+        <!-- Left Content Area -->
+        <div class="product-content-left">
+            <div class="product-title-area">
+                <h1 id="productTitle">Galaxy A37 5G (12 GB Memory)</h1>
+                <div class="product-rating">
+                    <div class="stars">
+                        <i data-lucide="star" fill="#fbbf24" color="#fbbf24"></i>
+                        <i data-lucide="star" fill="#fbbf24" color="#fbbf24"></i>
+                        <i data-lucide="star" fill="#fbbf24" color="#fbbf24"></i>
+                        <i data-lucide="star" fill="#fbbf24" color="#fbbf24"></i>
+                        <i data-lucide="star-half" fill="#fbbf24" color="#fbbf24"></i>
+                    </div>
+                    <span class="rating-count">4.6 (84 Reviews)</span>
+                </div>
+            </div>
+
+            <div class="tabs-container">
+                <nav class="product-tabs">
+                    <button class="tab-btn active" data-target="features">Features</button>
+                    <button class="tab-btn" data-target="specs">Specs</button>
+                    <button class="tab-btn" data-target="reviews">Reviews</button>
+                    <button class="tab-btn" data-target="faq">FAQ</button>
+                </nav>
+            </div>
+
+            <section class="dynamic-content">
+                <!-- Features Section -->
+                <div id="features" class="tab-content active">
+                    <div class="feature-layout">
+                        <div class="feature-images">
+                            <div class="dynamic-product-image" id="dynamicProductImageContainer">
+                                <!-- Dynamic image rendered via JS -->
+                            </div>
+                            <div class="default-mobile-image" id="mobileProductImageContainer">
+                                <!-- Default mobile image rendered via JS -->
+                            </div>
+                        </div>
+
+                        <div class="feature-blocks-wrapper">
+                            <div class="feature-header">
+                                <h3 class="section-title">Key Feature</h3>
+                                <i data-lucide="chevron-up"></i>
+                            </div>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h4>Three lenses. One powerful camera.</h4>
+                                    <p>Shoot, edit and share special moments with the upgraded camera system of Galaxy
+                                        A57 5G. Equipped with a 50 MP OIS Wide-angle Camera, a 12 MP Ultra Wide Camera
+                                        and a 5 MP Macro Camera, it lets you take photos and videos that are bright,
+                                        crisp and share-worthy.</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Bright videos, even at night</h4>
+                                    <p>Conquer the night and capture unforgettable bright moments with optimized
+                                        Nightography. The Wide Camera supports enhanced ISP for faster image processing
+                                        that drastically reduces the amount of absorbed noise.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specs Section -->
+                <div id="specs" class="tab-content">
+                    <h3 class="section-title">Technical Specifications</h3>
+                    <ul class="feature-list">
+                        <li><strong>RAM:</strong> 12GB LPDDR5X</li>
+                        <li><strong>Storage:</strong> 256GB / 512GB / 1TB UFS 4.0</li>
+                        <li><strong>Processor:</strong> Snapdragon 8 Gen 3 for Galaxy (4nm)</li>
+                        <li><strong>OS:</strong> One UI 6.1 based on Android 14</li>
+                    </ul>
+                </div>
+
+                <!-- Reviews Section -->
+                <div id="reviews" class="tab-content">
+                    <h3 class="section-title">Featured Reviews</h3>
+
+                    <div class="reviews-container">
+                        <!-- Rating Summary -->
+                        <div class="rating-summary-container">
+                            <div class="rating-snapshot">
+                                <h4>Rating Snapshot</h4>
+                                <p class="snapshot-desc">Select a row below to filter reviews.</p>
+                                <div class="rating-bars">
+                                    <div class="rating-bar-row"><span>5 stars</span>
+                                        <div class="bar-bg">
+                                            <div class="bar-fill" style="width: 75%;"></div>
+                                        </div><span>63</span>
+                                    </div>
+                                    <div class="rating-bar-row"><span>4 stars</span>
+                                        <div class="bar-bg">
+                                            <div class="bar-fill" style="width: 15%;"></div>
+                                        </div><span>13</span>
+                                    </div>
+                                    <div class="rating-bar-row"><span>3 stars</span>
+                                        <div class="bar-bg">
+                                            <div class="bar-fill" style="width: 6%;"></div>
+                                        </div><span>5</span>
+                                    </div>
+                                    <div class="rating-bar-row"><span>2 stars</span>
+                                        <div class="bar-bg">
+                                            <div class="bar-fill" style="width: 0%;"></div>
+                                        </div><span>0</span>
+                                    </div>
+                                    <div class="rating-bar-row"><span>1 star</span>
+                                        <div class="bar-bg">
+                                            <div class="bar-fill" style="width: 4%;"></div>
+                                        </div><span>3</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="overall-rating">
+                                <h4>Overall Rating</h4>
+                                <div class="score-display">
+                                    <span class="score-huge">4.6</span>
+                                    <div class="score-stars">
+                                        <div class="stars-icons">
+                                            <i data-lucide="star" fill="#fbbf24" color="#fbbf24"></i>
+                                            <i data-lucide="star" fill="#fbbf24" color="#fbbf24"></i>
+                                            <i data-lucide="star" fill="#fbbf24" color="#fbbf24"></i>
+                                            <i data-lucide="star" fill="#fbbf24" color="#fbbf24"></i>
+                                            <i data-lucide="star-half" fill="#fbbf24" color="#fbbf24"></i>
+                                        </div>
+                                        <span class="rev-count-small">84 Reviews</span>
+                                    </div>
+                                </div>
+                                <p class="recommend-text">57 out of 65 (88%) reviewers recommend this product</p>
+                            </div>
+                        </div>
+
+                        <!-- Category Ratings -->
+                        <div class="category-ratings">
+                            <p class="cat-ratings-title">Average Customer Ratings</p>
+                            <div class="cat-ratings-grid">
+                                <div class="cat-rating-item">
+                                    <span>Features</span>
+                                    <div class="cat-bar">
+                                        <div class="cat-fill" style="width: 86%;"></div>
+                                    </div>
+                                    <span class="cat-score">4.3</span>
+                                </div>
+                                <div class="cat-rating-item">
+                                    <span>Performance</span>
+                                    <div class="cat-bar">
+                                        <div class="cat-fill" style="width: 76%;"></div>
+                                    </div>
+                                    <span class="cat-score">3.8</span>
+                                </div>
+                                <div class="cat-rating-item">
+                                    <span>Design</span>
+                                    <div class="cat-bar">
+                                        <div class="cat-fill" style="width: 90%;"></div>
+                                    </div>
+                                    <span class="cat-score">4.5</span>
+                                </div>
+                                <div class="cat-rating-item">
+                                    <span>Value</span>
+                                    <div class="cat-bar">
+                                        <div class="cat-fill" style="width: 74%;"></div>
+                                    </div>
+                                    <span class="cat-score">3.7</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Cards -->
+                        <div class="review-cards-grid">
+                            <div class="review-card">
+                                <p class="card-badge">Most Helpful Favorable Review</p>
+                                <div class="stars-icons small"><i data-lucide="star" fill="#fbbf24"
+                                        color="#fbbf24"></i><i data-lucide="star" fill="#fbbf24" color="#fbbf24"></i><i
+                                        data-lucide="star" fill="#fbbf24" color="#fbbf24"></i><i data-lucide="star"
+                                        fill="#fbbf24" color="#fbbf24"></i><i data-lucide="star" color="#fbbf24"></i>
+                                </div>
+                                <h4>Samsung a57</h4>
+                                <div class="user-info">
+                                    <span class="username">GSKS</span>
+                                    <span class="time">4 days ago</span>
+                                </div>
+                                <p class="review-text">all good but camera is low rate performance better design super
+                                </p>
+                                <a href="#" class="show-full">Show Full Review</a>
+                                <div class="helpful-count">
+                                    <i data-lucide="thumbs-up" fill="var(--accent)" color="var(--accent)"></i> 23 people
+                                    found this helpful
+                                </div>
+                            </div>
+
+                            <div class="review-card">
+                                <p class="card-badge">Most Helpful Critical Review</p>
+                                <div class="stars-icons small"><i data-lucide="star" fill="#fbbf24"
+                                        color="#fbbf24"></i><i data-lucide="star" fill="#fbbf24" color="#fbbf24"></i><i
+                                        data-lucide="star" fill="#fbbf24" color="#fbbf24"></i><i data-lucide="star"
+                                        color="#fbbf24"></i><i data-lucide="star" color="#fbbf24"></i></div>
+                                <h4>Others are superb</h4>
+                                <div class="user-info">
+                                    <span class="username">Yogi82</span>
+                                    <span class="time">4 days ago</span>
+                                </div>
+                                <p class="review-text">Not that great also battery low and performance is very poor</p>
+                                <a href="#" class="show-full">Show Full Review</a>
+                                <div class="helpful-count">
+                                    <i data-lucide="thumbs-up" fill="var(--accent)" color="var(--accent)"></i> 11 people
+                                    found this helpful
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div id="faq" class="tab-content">
+                    <div class="feature-header">
+                        <h3 class="section-title">Frequently Asked Questions</h3>
+                        <i data-lucide="chevron-up"></i>
+                    </div>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question">Q. [Trade-in] What is the Samsung Upgrade Program? <i
+                                    data-lucide="chevron-down"></i></button>
+                            <div class="faq-answer">
+                                <p>The upgrade program allows you to exchange your old device for a newer model at a
+                                    discounted price...</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Q. [Order / Delivery] How do I track my order? <i
+                                    data-lucide="chevron-down"></i></button>
+                            <div class="faq-answer">
+                                <p>You can track your order using the tracking link sent to your email after shipping.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Q. What is the Warranty Policy? <i
+                                    data-lucide="chevron-down"></i></button>
+                            <div class="faq-answer">
+                                <p>We offer a 1-year comprehensive warranty on all mobile devices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column: Sticky Buy -->
+        <div class="product-sticky-right">
+            <div class="sticky-buy-card">
+                <div class="price-info">
+                    <p class="mrp">MRP: <s>₹45,000</s></p>
+                    <h2 class="current-price" id="productPrice">From ₹3,500/mo.<br>or ₹42,000</h2>
+                    <p class="savings">Save ₹3,000 (7%)</p>
+                </div>
+                <div class="buy-actions">
+                    <button class="btn-buy" id="buyBtn">Buy Now</button>
+                    <button class="btn-add-cart" id="addCartBtn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="product.js"></script>
+    <script src="buy-flow.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
